@@ -6,6 +6,11 @@
     font-size: $defaultFontSize;
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 a, button {
     cursor: pointer;
 }
