@@ -1,9 +1,55 @@
 @import '../../scss/main';
 
 .jobCard {
+    position: relative;
     display: flex;
     flex-direction: column;
     background-color: $white;
     padding: 20px;
     border-radius: 6px;
+
+    .jobCard__logo {
+        position: absolute;
+        top: -25px;
+        left: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+        border-radius: 15px;
+        background-color: transparent;
+        // box-shadow: 4px 4px 100px 0 rgba(0, 0, 0, 0.2);
+
+        img {
+            width: 80%;
+        }
+    }
+
+    .jobCard__body {
+        .jobCard__postDate {
+            color: $darkGrey;
+            font-size: 1rem;
+            margin: 15px 0;
+        }
+
+        .jobCard__description {
+            h3 {
+                font-size: 1.4rem;
+                color: $veryDarkBlue;
+                margin-bottom: 15px;
+            }
+
+            .jobCard__jobCompany {
+                color: $darkGrey;
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+        }
+
+        .jobCard__location {
+            color: $primaryViolet;
+            font-weight: 700;
+        }
+    }
 }
