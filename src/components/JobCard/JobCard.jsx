@@ -1,9 +1,15 @@
 import React from 'react';
 import styles from './JobCard.module.scss';
+import styled from 'styled-components';
+import { lightMode, darkMode, GlobalStyles } from '../../themes';
+
+const StyledCard = styled.div`
+    background-color: ${props => props.theme.cardBg }
+`
 
 const JobCard = ({ job }) => {
     return (
-        <div className={styles.jobCard}>
+        <StyledCard className={styles.jobCard}>
             <div className={styles.jobCard__logo}>
                 <img src={job.company_logo} alt=""/>
             </div>
@@ -15,7 +21,7 @@ const JobCard = ({ job }) => {
                 </div>
                 <p className={styles.jobCard__location}>{job.location}</p>
             </div>
-        </div>
+        </StyledCard>
     )
 }
 

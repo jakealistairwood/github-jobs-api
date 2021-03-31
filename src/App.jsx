@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import Navbar from './components/Navbar';
 import JobLibrary from './components/JobLibrary';
+import Searchbar from './components/Searchbar';
 // import { BrowserRouter, Route } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightMode, darkMode, GlobalStyles } from './themes';
@@ -36,6 +37,7 @@ const App = () => {
           onToggle={() => setIsToggled(!isToggled)}
           toggleTheme={toggleTheme}
         />
+        <Searchbar />
         <JobLibrary jobs={jobs} />
         {/* <Route path="/" component={JobLibrary} /> */}
       </StyledApp>
