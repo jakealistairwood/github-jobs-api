@@ -1,10 +1,20 @@
 @import '../../scss/main';
 
 .jobLibrary {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
     width: 80%;
     margin: 0 auto;
     margin-top: 100px;
+
+    .loaderContainer {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        padding: 30px;
+        border-radius: 5px;
+    }
 }

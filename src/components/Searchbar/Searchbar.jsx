@@ -3,7 +3,7 @@ import styles from './Searchbar.module.scss';
 
 const Searchbar = () => {
     return (
-        <div className={styles.searchbar}>
+        <div className={styles.search}>
             
         </div>
     )

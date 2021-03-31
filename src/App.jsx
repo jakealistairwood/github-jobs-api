@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import JobLibrary from './components/JobLibrary';
@@ -11,18 +10,9 @@ import { lightMode, darkMode, GlobalStyles } from './themes';
 const StyledApp = styled.div``
 
 const App = () => {
-  const [ jobs, setJobs ] = useState([]);
+
   const [ isToggled, setIsToggled ] = useState(false);
   const [ theme, setTheme ] = useState('light');
-
-  useEffect(() => {
-    const url = 'https://cors.bridged.cc/https://jobs.github.com/positions.json';
-    const fetchData = async () => {
-      const request = await axios.get(url);
-      setJobs(request.data);
-    }
-    fetchData();
-  },[]);
 
   const toggleTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
@@ -38,7 +28,7 @@ const App = () => {
           toggleTheme={toggleTheme}
         />
         <Searchbar />
-        <JobLibrary jobs={jobs} />
+        <JobLibrary />
         {/* <Route path="/" component={JobLibrary} /> */}
       </StyledApp>
     </ThemeProvider>  
