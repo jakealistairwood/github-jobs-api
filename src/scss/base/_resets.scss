@@ -11,6 +11,10 @@ html, body {
     width: 100%;
 }
 
+body {
+    background-color: $lightGrey;
+}
+
 a, button {
     cursor: pointer;
 }

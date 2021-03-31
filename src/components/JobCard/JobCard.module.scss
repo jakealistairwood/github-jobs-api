@@ -1,0 +1,9 @@
+@import '../../scss/main';
+
+.jobCard {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    padding: 20px;
+    border-radius: 6px;
+}
