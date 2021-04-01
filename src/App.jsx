@@ -1,42 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
-import JobLibrary from './components/JobLibrary';
-import Searchbar from './components/Searchbar';
-import LoadingScreen from './components/LoadingScreen';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightMode, darkMode, GlobalStyles } from './themes';
+import Navbar from './components/Navbar';
+import Home from './containers/Home';
+import JobDetails from './containers/JobDetails';
 
 const StyledApp = styled.div``
 
 const App = () => {
-  // State control for API requests
-  const [ jobs, setJobs ] = useState([]);
-  const [ searchJobs, setSearchJobs ] = useState("");
-  const [ jobLocation, setJobLocation ] = useState("");
-  const [ fullTime, setFullTime ] = useState(false);
-  // State control for loading screen
-  const [ loading, setLoading ] = useState(false);
+
   // State control for light/dark mode
   const [ isToggled, setIsToggled ] = useState(false);
   const [ theme, setTheme ] = useState('light'); 
-
-  // API Search requests
-  const searchByJobDescription = searchJobs ? `?description=${searchJobs}` : '';
-  const searchByJobLocation = jobLocation ? `?location=${jobLocation}` : '';
-  const jobFullTime = fullTime ? `?full_time=${fullTime}` : "";
-    
-  useEffect(() => {
-    const url = `https://cors.bridged.cc/https://jobs.github.com/positions.json${searchByJobDescription}${searchByJobLocation}${jobFullTime}`;
-    const fetchData = async () => {
-      const request = await axios.get(url);
-      setJobs(request.data);
-    }
-    fetchData();
-    setLoading(true);
-  },[searchJobs, jobLocation, fullTime]);
 
   const toggleTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
@@ -48,20 +25,20 @@ const App = () => {
         <GlobalStyles />
         <StyledApp className="app">
           <Navbar 
-            isToggled={isToggled}
-            onToggle={() => setIsToggled(!isToggled)}
-            toggleTheme={toggleTheme}
+            isToggled={isToggled} 
+            onToggle={() => setIsToggled(!isToggled)} 
+            toggleTheme={toggleTheme} 
           />
-          <Searchbar
-            searchJobs={searchJobs}
-            setSearchJobs={setSearchJobs}
-            jobLocation={jobLocation}
-            setJobLocation={setJobLocation}
-            fullTime={fullTime}
-            setFullTime={setFullTime}
-          />
-          {loading ? <JobLibrary jobs={jobs} /> : <LoadingScreen />}
-          {/* <Route exact path="/" component={JobLibrary} /> */}
+          <Switch>
+            <Route 
+              exact 
+              path="/" 
+              render={(props) => (
+                <Home {...props} />
+              )} 
+            />
+            <Route path="/job/:id" component={JobDetails} />
+          </Switch>
         </StyledApp>
       </ThemeProvider> 
     </Router> 
