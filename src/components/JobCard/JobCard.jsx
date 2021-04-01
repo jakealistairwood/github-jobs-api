@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './JobCard.module.scss';
 import styled from 'styled-components';
-import { lightMode, darkMode, GlobalStyles } from '../../themes';
 
 const StyledCard = styled.div`
     background-color: ${props => props.theme.cardBg }
