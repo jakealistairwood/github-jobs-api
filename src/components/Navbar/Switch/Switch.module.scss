@@ -31,6 +31,12 @@
             background-color: #fff;
             border-radius: 30px;
 
+            &:hover {
+                &::before {
+                    background-color: #939BF4;
+                }
+            }
+
             &::before {
                 position: absolute;
                 content: '';
