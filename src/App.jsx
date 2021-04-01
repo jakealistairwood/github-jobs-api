@@ -37,7 +37,12 @@ const App = () => {
                 <Home {...props} />
               )} 
             />
-            <Route path="/job/:id" component={JobDetails} />
+            <Route 
+              path="/job/:id" 
+              render={(props) => (
+                <JobDetails {...props} />
+              )} 
+            />
           </Switch>
         </StyledApp>
       </ThemeProvider> 

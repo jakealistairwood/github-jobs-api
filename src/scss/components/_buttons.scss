@@ -11,3 +11,17 @@
         background-color: $lightViolet;
     }
 }
+
+.secondaryBtn {
+    background-color: #ebecfa;
+    color: $primaryViolet;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #bec1ef;
+    }
+}

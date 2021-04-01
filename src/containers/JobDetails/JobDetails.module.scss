@@ -1,1 +1,112 @@
 @import '../../scss/main';
+
+.jobDetails {
+    position: absolute;
+    left: 20%;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+    
+    .jobDetails__header {
+        display: flex;
+        flex-direction: row;
+        border-radius: 6px;
+
+        .jobDetails__headerImg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 0.3;
+
+            img {
+                width: 100%;
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+            }
+        }
+
+        .jobDetails__headerBody {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+            flex: 0.7;
+
+            div {
+                h3 {
+                    font-size: 1.7rem;
+                    margin-bottom: 15px;
+                }
+
+                p {
+                    color: $darkGrey;
+                }
+            }
+
+            a {
+                .secondaryBtn {
+                    width: 147px;
+                    height: 48px;
+                }
+            }
+        }
+    }
+
+    .jobDetails__content {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        padding: 40px;
+
+        .jobDetails__contentHeader {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            div {
+                .jobDetails__jobType {
+                    color: $darkGrey;
+                    font-size: 1.2rem;
+                    margin-bottom: 10px;
+                }
+
+                h2 {
+                    font-size: 1.8rem;
+                    margin-bottom: 14px;
+                }
+
+                .jobDetails__location {
+                    color: $primaryViolet;
+                    font-weight: 700;
+                }
+            }
+
+            .primaryBtn {
+                width: 141px;
+                height: 48px;
+            }
+        }
+
+        .jobDetails__jobDescription {
+            margin-top: 60px;
+
+            p {
+                line-height: 30px;
+                color: $darkGrey;
+            }
+
+            ul {
+                margin: 20px 0;
+                li {
+                    color: $darkGrey;
+                    line-height: 30px;
+                    margin-left: 60px;
+                }
+            }
+        }
+    }
+}
