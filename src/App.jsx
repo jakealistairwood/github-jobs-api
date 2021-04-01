@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import JobLibrary from './components/JobLibrary';
 import Searchbar from './components/Searchbar';
 import LoadingScreen from './components/LoadingScreen';
-// import { BrowserRouter, Route } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightMode, darkMode, GlobalStyles } from './themes';
 
@@ -36,33 +36,35 @@ const App = () => {
     }
     fetchData();
     setLoading(true);
-  },[]);
+  },[searchJobs, jobLocation, fullTime]);
 
   const toggleTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
   }
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightMode : darkMode}>
-      <GlobalStyles />
-      <StyledApp className="app">
-        <Navbar 
-          isToggled={isToggled}
-          onToggle={() => setIsToggled(!isToggled)}
-          toggleTheme={toggleTheme}
-        />
-        <Searchbar
-          searchJobs={searchJobs}
-          setSearchJobs={setSearchJobs}
-          jobLocation={jobLocation}
-          setJobLocation={setJobLocation}
-          fullTime={fullTime}
-          setFullTime={setFullTime}
-        />
-        {loading ? <JobLibrary jobs={jobs} /> : <LoadingScreen />}
-        {/* <Route path="/" component={JobLibrary} /> */}
-      </StyledApp>
-    </ThemeProvider>  
+    <Router>
+      <ThemeProvider theme={theme === 'light' ? lightMode : darkMode}>
+        <GlobalStyles />
+        <StyledApp className="app">
+          <Navbar 
+            isToggled={isToggled}
+            onToggle={() => setIsToggled(!isToggled)}
+            toggleTheme={toggleTheme}
+          />
+          <Searchbar
+            searchJobs={searchJobs}
+            setSearchJobs={setSearchJobs}
+            jobLocation={jobLocation}
+            setJobLocation={setJobLocation}
+            fullTime={fullTime}
+            setFullTime={setFullTime}
+          />
+          {loading ? <JobLibrary jobs={jobs} /> : <LoadingScreen />}
+          {/* <Route exact path="/" component={JobLibrary} /> */}
+        </StyledApp>
+      </ThemeProvider> 
+    </Router> 
   )
 }
 
