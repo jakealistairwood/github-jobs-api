@@ -16,7 +16,16 @@ const StyledDiv = styled.div`
     border-right: 1px solid ${props => props.theme.borderRight}
 `
 
-const Searchbar = () => {
+const Searchbar = (props) => {
+    const { 
+        searchJobs, 
+        setSearchJobs,
+        jobLocation, 
+        setJobLocation,
+        fullTime,
+        setFullTime 
+    } = props;
+    
     return (
         <StyledSearchBar className={styles.search}>
             <StyledDiv className={styles.search__filterOne}>
@@ -26,6 +35,10 @@ const Searchbar = () => {
                     type="text" 
                     id="searchByJob" 
                     placeholder="Filter by title, companies, expertise..."
+                    value={searchJobs}
+                    onChange={(e) => {
+                        setSearchJobs(e.target.value);
+                    }}
                 />
             </StyledDiv>    
             <StyledDiv className={styles.search__filterTwo}>
@@ -35,6 +48,10 @@ const Searchbar = () => {
                     type="text" 
                     id="searchByLocation"
                     placeholder="Filter by location..."
+                    value={jobLocation}
+                    onChange={(e) => {
+                        setJobLocation(e.target.value);
+                    }}
                 />
             </StyledDiv>    
             <div className={styles.search__filterThree}>
@@ -42,6 +59,7 @@ const Searchbar = () => {
                     <input 
                         type="checkbox" 
                         id="filterFullTimeRoles"
+                        value={fullTime}
                     />
                     <StyledLabel htmlFor="filterFullTimeRoles">Full Time Only</StyledLabel>
                 </div>

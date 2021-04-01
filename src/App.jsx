@@ -12,15 +12,24 @@ import { lightMode, darkMode, GlobalStyles } from './themes';
 const StyledApp = styled.div``
 
 const App = () => {
-
-  const [ isToggled, setIsToggled ] = useState(false);
-  const [ theme, setTheme ] = useState('light');
-
+  // State control for API requests
   const [ jobs, setJobs ] = useState([]);
-  const [ loading, setLoading ] = useState(false); 
+  const [ searchJobs, setSearchJobs ] = useState("");
+  const [ jobLocation, setJobLocation ] = useState("");
+  const [ fullTime, setFullTime ] = useState(false);
+  // State control for loading screen
+  const [ loading, setLoading ] = useState(false);
+  // State control for light/dark mode
+  const [ isToggled, setIsToggled ] = useState(false);
+  const [ theme, setTheme ] = useState('light'); 
+
+  // API Search requests
+  const searchByJobDescription = searchJobs ? `?description=${searchJobs}` : '';
+  const searchByJobLocation = jobLocation ? `?location=${jobLocation}` : '';
+  const jobFullTime = fullTime ? `?full_time=${fullTime}` : "";
     
   useEffect(() => {
-    const url = 'https://cors.bridged.cc/https://jobs.github.com/positions.json';
+    const url = `https://cors.bridged.cc/https://jobs.github.com/positions.json${searchByJobDescription}${searchByJobLocation}${jobFullTime}`;
     const fetchData = async () => {
       const request = await axios.get(url);
       setJobs(request.data);
@@ -42,7 +51,14 @@ const App = () => {
           onToggle={() => setIsToggled(!isToggled)}
           toggleTheme={toggleTheme}
         />
-        <Searchbar />
+        <Searchbar
+          searchJobs={searchJobs}
+          setSearchJobs={setSearchJobs}
+          jobLocation={jobLocation}
+          setJobLocation={setJobLocation}
+          fullTime={fullTime}
+          setFullTime={setFullTime}
+        />
         {loading ? <JobLibrary jobs={jobs} /> : <LoadingScreen />}
         {/* <Route path="/" component={JobLibrary} /> */}
       </StyledApp>
