@@ -36,6 +36,7 @@
             flex: 0.7;
 
             div {
+
                 h3 {
                     font-size: 1.7rem;
                     margin-bottom: 15px;
@@ -99,6 +100,11 @@
                 color: $darkGrey;
             }
 
+            h2 {
+                font-size: 1.5rem;
+                margin: 20px 0;
+            }
+
             ul {
                 margin: 20px 0;
                 li {
@@ -107,6 +113,38 @@
                     margin-left: 60px;
                 }
             }
+        }
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%; 
+    box-shadow: 5px 5px 100px 0 rgba(0, 0, 0, 0.1);
+    
+    .footer__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 60%;
+        margin: 20px auto;
+
+        .footer__content {
+            h3 {
+                margin-bottom: 15px;
+                font-size: 1.4rem;
+            }
+
+            p {
+                color: $darkGrey;
+            }
+        }
+
+        .primaryBtn {
+            width: 141px;
+            height: 48px;
         }
     }
 }

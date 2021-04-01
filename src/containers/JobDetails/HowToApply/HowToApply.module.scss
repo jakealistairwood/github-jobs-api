@@ -1,0 +1,26 @@
+@import '../../../scss/main';
+
+.howToApply {
+    background-image: url('../../../img/desktop/bg-pattern-detail-footer.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-position: top;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    border-radius: 6px;
+    padding: 50px;
+
+    h3 {
+        font-size: 1.5rem;
+        color: $white;
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: $white;
+    }
+
+    a {
+        color: $white;
+    }
+}
