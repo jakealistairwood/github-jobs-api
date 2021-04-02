@@ -32,7 +32,7 @@ const Home = (props) => {
       },[searchJobs, jobLocation, fullTime]);
 
     return (
-        <div className="home">
+        <div className={styles.home}>
             <Searchbar
                 searchJobs={searchJobs}
                 setSearchJobs={setSearchJobs}
