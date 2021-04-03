@@ -19,6 +19,9 @@ const JobLibrary = ({ jobs }) => {
             <div className={styles.jobLibrary}>
                 {jobs.slice(0, jobsOnDisplay).map(renderJobCards)}
             </div>
+            <div className={styles.button__container}>
+                <button className={styles.primaryBtn} onClick={renderNextJobs}>Load More</button>
+            </div>
         </>
     )
 }

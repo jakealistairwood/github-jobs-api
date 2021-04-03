@@ -60,6 +60,9 @@ const Searchbar = (props) => {
                         type="checkbox" 
                         id="filterFullTimeRoles"
                         value={fullTime}
+                        onToggle={() => {
+                            setFullTime(!fullTime)
+                        }}
                     />
                     <StyledLabel htmlFor="filterFullTimeRoles">Full Time Only</StyledLabel>
                 </div>
