@@ -40,17 +40,14 @@
                 h3 {
                     font-size: 1.7rem;
                     margin-bottom: 15px;
+
+                    @media screen and (max-width: 1440px) {
+                        font-size: 1.3rem;
+                    }
                 }
 
                 p {
                     color: $darkGrey;
-                }
-            }
-
-            a {
-                .secondaryBtn {
-                    width: 147px;
-                    height: 48px;
                 }
             }
         }
@@ -78,6 +75,10 @@
                 h2 {
                     font-size: 1.8rem;
                     margin-bottom: 14px;
+
+                    @media screen and (max-width: 1440px) {
+                        font-size: 1.4rem;
+                    }
                 }
 
                 .jobDetails__location {

@@ -9,7 +9,10 @@ export const lightMode = {
     input: '#FFFFFF',
     inputText: '#19202D',
     fullTimeLabel: '#19202D',
-    borderRight: '#E2E6EA'
+    borderRight: '#E2E6EA',
+    buttonBgColor: '#EEEFFC',
+    buttonTextColor: '#5964E0',
+    buttonHoverColor: '#c5caf2'
 }
 
 export const darkMode = {
@@ -21,7 +24,10 @@ export const darkMode = {
     input: '#19202D',
     inputText: '#FFFFFF',
     fullTimeLabel: '#FFFFFF',
-    borderRight: '#6E8098'
+    borderRight: '#6E8098',
+    buttonBgColor: '#303642',
+    buttonTextColor: '#FFFFFF',
+    buttonHoverColor: '#525861'
 }
 
 export const GlobalStyles = createGlobalStyle`

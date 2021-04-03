@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Home.module.scss';
 import axios from 'axios';
-import Navbar from '../../components/Navbar';
 import Searchbar from '../../components/Searchbar';
 import JobLibrary from '../../components/JobLibrary';
 import LoadingScreen from '../../components/LoadingScreen';
@@ -29,7 +28,7 @@ const Home = (props) => {
         }
         fetchData();
         setLoading(true);
-      },[searchJobs, jobLocation, fullTime]);
+      },[searchByJobDescription, searchByJobLocation, jobFullTime]);
 
     return (
         <div className={styles.home}>

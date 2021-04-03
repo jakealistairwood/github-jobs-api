@@ -15,6 +15,21 @@ const StyledFooter = styled.footer`
     background-color: ${props => props.theme.cardBg}
 `
 
+const StyledButton = styled.button`
+    background-color: ${props => props.theme.buttonBgColor};
+    color: ${props => props.theme.buttonTextColor};
+    border: none;
+    width: 147px;
+    height: 48px;
+    font-weight: 700;
+    transition: 0.3s ease-in-out;
+    border-radius: 6px;
+
+    &:hover {
+        background-color: ${props => props.theme.buttonHoverColor};
+    }
+`
+
 const JobDetails = (props) => {
     console.log(props.location.state.job);
 
@@ -33,7 +48,7 @@ const JobDetails = (props) => {
                             <p>{data.company_url}</p>
                         </div>
                         <a href={data.company_url}>
-                            <button className={styles.secondaryBtn}>Company Site</button>
+                            <StyledButton className={styles.companyBtn}>Company Site</StyledButton>
                         </a>
                     </div>
                 </StyledHeader>
