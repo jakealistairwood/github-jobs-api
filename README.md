@@ -1,8 +1,8 @@
-![Frontendmentor-Logo](frontendmentor.svg);
+![Frontendmentor-Logo](https://github.com/jakealistairwood/github-jobs-api/blob/master/src/img/frontendmentor.svg)
 
 # DEVJOBS
 
-![Devjobs-Preview](preview.jpg);
+![Devjobs-Preview](https://github.com/jakealistairwood/github-jobs-api/blob/master/src/img/preview.jpg)
 
 Devjobs is a frontendmentor.io challenge where I had to replicate the design from scratch, from the Figma mockup to the fully-fledged product it is now. It uses the Github jobs API to display a collection of recently advertised roles. 
 
