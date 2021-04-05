@@ -1,12 +1,8 @@
-## Screenshots 
-
-<img src="img/frontendmentor.svg">
+![Frontendmentor-Logo](frontendmentor.svg);
 
 # DEVJOBS
 
-## Screenshots
-
-<img src="img/github-jobs-preview.png">
+![Devjobs-Preview](preview.jpg);
 
 Devjobs is a frontendmentor.io challenge where I had to replicate the design from scratch, from the Figma mockup to the fully-fledged product it is now. It uses the Github jobs API to display a collection of recently advertised roles. 
 
