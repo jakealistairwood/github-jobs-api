@@ -9,6 +9,11 @@
     margin-bottom: 150px;
     border-radius: 6px;
     padding: 50px;
+    width: 100%;
+
+    @media screen and (max-width: 500px) {
+        padding: 30px;
+    }
 
     h3 {
         font-size: 1.5rem;
@@ -18,9 +23,11 @@
 
     p {
         color: $white;
+        width: 80%;
     }
 
     a {
         color: $white;
+        width: 80%;
     }
 }

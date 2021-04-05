@@ -12,6 +12,11 @@
     border-radius: 6px;
     // margin: 0 auto;
 
+    @media screen and (max-width: 1024px) {
+        width: 90%;
+        left: 5%;
+    }
+
     .search__filterOne,
     .search__filterTwo,
     .search__filterThree {
@@ -31,6 +36,12 @@
         flex: 0.4;
     }
 
+    .search__filterTwo {
+        @media screen and (max-width: 500px) {
+            display: none;
+        }
+    }
+
     .search__filterTwo,
     .search__filterThree {
         flex: 0.3;
@@ -40,6 +51,12 @@
         justify-content: space-between;
 
         div {
+            input[type="checkbox"] {
+                @media screen and (max-width: 500px) {
+                    display: none;
+                }
+            }
+
             label {
                 font-weight: 700;
                 font-size: 1.2rem;
@@ -48,6 +65,10 @@
                 @media screen and (max-width: 1440px) {
                     font-size: 1rem;
                     padding-left: 10px;
+                }
+
+                @media screen and (max-width: 500px) {
+                    display: none;
                 }
             }
         }
